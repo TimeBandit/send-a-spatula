@@ -1,0 +1,75 @@
+@font-face{ 
+	font-family: 'Vanilla-webfont';
+	src: url('../fonts/Vanilla-webfont.eot');
+	src: url('../fonts/Vanilla-webfont.eot?iefix') format('eot'),
+	     url('../fonts/Vanilla-webfont.woff') format('woff'),
+	     url('../fonts/Vanilla-webfont.ttf') format('truetype'),
+	     url('../fonts/Vanilla-webfont.svg#webfont') format('svg');
+}
+
+.nav-wrapper {
+	position: fixed;
+	background-color: #17a1e5;
+	width: 100%;
+	padding: 15 10 15 10;
+	z-index: 10;
+}
+
+nav {
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+	color: #FFDE00;
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 0.2em;
+	font-weight: 700;
+}
+
+.logo {
+	float: left;
+	font-size: 1em;
+	font-family: Vanilla-webfont;
+}
+
+ul {
+	float: right;
+}
+
+li {
+	display: inline;
+	margin-left: 10px;
+}
+
+.buy {
+	background-color: white;
+	color: black;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.content {
+	width: 960px;
+	margin: 0 auto;
+	padding: 75px 10px;
+	font-family: 'Lato', sans-serif;
+	line-height: 1.7em;
+	color:   #1a1a1a;
+}
+
+.landing {
+	font-family: Vanilla-webfont;
+	font-weight: 300;
+	font-size: 5em;
+	text-align: center;
+	color: #17a1e5;
+	line-height: 1.5em;
+}
+
+.subTitle {
+	text-align: center;
+	color: #999;
+	font-size: 300;
+	font-size: 1.5em;
+	word-spacing: 0.25em;
+	animation-delay: 2s;
+}
