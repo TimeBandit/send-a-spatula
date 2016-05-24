@@ -1,4 +1,7 @@
-export const default class MainLayout = ({content}) => (
+// the layout of the app
+import React from 'react';
+
+const MainLayout = ({content}) => (
     <div>
       <header>
         This is our header
@@ -8,3 +11,5 @@ export const default class MainLayout = ({content}) => (
       </main>
     </div>
 );
+
+export default MainLayout;
