@@ -3,15 +3,14 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import MainLayout from '../../ui/layouts/MainLayout.jsx'
+import AppContainer from '../../ui/containers/AppContainer.jsx';
+import WelcomeComponent from '../../ui/components/WelcomeComponent.jsx'
 
-
-const WelcomeComponent = ({name}) => (<p>Hello, {name}</p>);
 
 FlowRouter.route('/', {
   name: 'App.home',
   action() {
-    mount(MainLayout, {
+    mount(AppContainer, {
   content: <WelcomeComponent name="Arunoda" />
 });
   },

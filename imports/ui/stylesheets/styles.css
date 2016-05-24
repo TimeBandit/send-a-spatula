@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Vanilla-webfont';
+    src: url('../fonts/Vanilla-webfont.eot');
+    src: url('../fonts/Vanilla-webfont.eot?iefix') format('eot'), url('../fonts/Vanilla-webfont.woff') format('woff'), url('../fonts/Vanilla-webfont.ttf') format('truetype'), url('../fonts/Vanilla-webfont.svg#webfont') format('svg');
+}
+
+.title {
+    font-family: Vanilla-webfont;
+    font-weight: 300;
+    font-size: 4.0em;
+    text-align: center;
+    color: #29ABE2;
+    line-height: 1.5em;
+}
+
+.subTitle {
+    text-align: center;
+    color: #1a1a1a;
+    font-size: 300;
+    font-size: 1.5em;
+    word-spacing: 0.25em;
+    animation-delay: 2s;
+}
+
+.spatula {
+    animation-delay: 4s
+}
+
+.buy form {
+    width: 275px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.how-it-works {
+    text-align: center;
+    color: #1a1a1a;
+}
+
+.landing,
+section.buy,
+.how-it-works,
+.tweets,
+.contact {
+    /*border-bottom: 1px solid #dcdcdc;*/
+    overflow: auto;
+}
+
+.tweets {
+    overflow: auto;
+}
+
+.landing,
+section.buy,
+.how-it-works,
+.tweets,
+.contact,
+{
+    padding: 20px 0px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+
+/* ------------------------------------------
+  NAVIGATION STYLES
+  (+ responsive-nav.css file is loaded in the <head>)
+--------------------------------------------- */
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nav-collapse,
+.nav-collapse * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* without this the collapsed menu wont open */
+
+.nav-collapse,
+.nav-collapse ul {
+    list-style: none;
+    width: 100%;
+    float: left;
+}
+
+
+/* lines the list elements in a row*/
+
+.nav-collapse li {
+    float: left;
+    width: 100%;
+}
+
+@media screen and (min-width: 40em) {
+    .nav-collapse li {
+        width: 25%;
+        *width: 24.9%;
+        /* IE7 Hack 
+    _width: 19%; /* IE6 Hack */
+    }
+}
+
+
+/* formats the contents of the list elements */
+
+.nav-collapse a {
+    text-decoration: none;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    padding: 0.7em 1em;
+    float: left;
+}
+
+
+/* puts the solid vertical line between the menu items */
+
+@media screen and (min-width: 40em) {
+    .nav-collapse a {
+        margin: 0;
+        padding: 1em;
+        float: left;
+        text-align: center;
+        border-bottom: 0;
+        border-right: 1px solid white;
+    }
+}
+
+.nav-collapse ul ul a {
+    background: #ca3716;
+    padding-left: 2em;
+}
+
+@media screen and (min-width: 40em) {
+    .nav-collapse ul ul a {
+        display: none;
+    }
+}
+
+
+/* ------------------------------------------
+  NAV TOGGLE STYLES
+--------------------------------------------- */
+
+.nav-toggle {
+    position: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    text-indent: -999px;
+    position: relative;
+    overflow: hidden;
+    width: 70px;
+    height: 55px;
+    float: right;
+}
+
+.nav-toggle:before {
+    color: lightblue;
+    /* Edit this to change the icon color */
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-size: 28px;
+    text-transform: none;
+    position: absolute;
+    content: "≡";
+    text-indent: 0;
+    text-align: center;
+    line-height: 55px;
+    speak: none;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.nav-toggle.active::before {
+    font-size: 24px;
+    content: "x";
+}
+
+li {
+    margin-bottom: 0px;
+}
+
+
+/*================ custom menu style ===============================*/
+
+.buy-menu {
+    color: black;
+    font-weight: bold;
+}
+
+section.buy,
+section.how-it-works,
+section.tweets,
+section.contact {
+    margin-top: 100px;
+    border-bottom: 1px dotted silver;
+}
+
+.nav-collapse a {
+    border-bottom: 1px solid lightblue;
+}
+
+.nav-collapse a:hover {
+    background: skyblue;
+    color: black
+}
+
+h4 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+div, span {
+    border: 1px solid pink;
+}
+
+/*html {
+    background: url(../images/Backgrounds.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}*/
