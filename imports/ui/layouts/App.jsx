@@ -7,28 +7,23 @@ import '../stylesheets/styles.css'
 
 // layout
 import React from 'react';
-import Menu from '../components/Menu.jsx'
-import Landing from "../components/Landing";
 import Buy from "../components/Buy";
 import HowItWorks from "../components/HowItWorks";
+import Header from "../components/Header";
+import ContactUs from "../components/ContactUs";
+import Footer from "../components/Footer";
 
 
 const App = ({content}) => (
 	<div className="container">
-		<section className="menu">
-			<div className="row">
-				<div className="column menu">
-					<Menu />
-				</div>
-			</div>
-		</section>
-		<section className="landing">
+		<section className="header">
 			<div className="row">
 				<div className="column">
-					<Landing />
+					<Header />
 				</div>
 			</div>
 		</section>
+		
 		<section className="buy">
 			<div className="row">
                 <div className="column">
@@ -45,13 +40,17 @@ const App = ({content}) => (
 			<HowItWorks />
 		</section>
 		<section className="tweets"></section>
-		<section className="contact-us"></section>
+		<section className="contact-us">
+			<div className="row">
+				<div className="column">
+					<ContactUs />
+				</div>
+			</div>
+		</section>
 		<section className="footer">
 			<div className="row">
 				<div className="column">
-					<footer>
-						This is the footer
-					</footer>
+					<Footer />
 				</div>
 			</div>
 		</section>

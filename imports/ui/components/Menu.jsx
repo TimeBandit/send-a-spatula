@@ -14,7 +14,7 @@ const Menu = () => (
 				<a href="">Contact</a>
 			</li>
 			<li>
-				<a href="">BUY</a>
+				<a href="">BUY -> <span className="cost">£5</span></a>
 			</li>
 		</ul>
 	</nav>
