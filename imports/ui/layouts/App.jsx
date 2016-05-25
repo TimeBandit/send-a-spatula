@@ -14,8 +14,8 @@ import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 
 
-const App = ({content}) => (
-	<div className="container">
+const App = ({ content }) => (
+    <div className="container">
 		<section className="header">
 			<div className="row">
 				<div className="column">
@@ -24,7 +24,7 @@ const App = ({content}) => (
 			</div>
 		</section>
 		
-		<section className="buy">
+		<section id="buy" className="buy">
 			<div className="row">
                 <div className="column">
                     <img className="spatula animated jello u-max-full-width" src="images/outline-spatula-horizontal-message.svg" alt=""/>
@@ -36,11 +36,15 @@ const App = ({content}) => (
 				</div>
 			</div>
 		</section>
-		<section className="how-it-works">
+		<section id="how-it-works" className="how-it-works">
+			<h5>How-it-Works</h5>
 			<HowItWorks />
 		</section>
-		<section className="tweets"></section>
-		<section className="contact-us">
+		<section id="tweets" className="tweets">
+			<h5>Tweets @sendaspatula</h5>
+		</section>
+		<section id="contact-us" className="contact-us">
+			<h5>Contact Us</h5>
 			<div className="row">
 				<div className="column">
 					<ContactUs />
@@ -55,6 +59,6 @@ const App = ({content}) => (
 			</div>
 		</section>
 	</div>
-	);
+);
 
 export default App;

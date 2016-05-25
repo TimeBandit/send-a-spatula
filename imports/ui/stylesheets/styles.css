@@ -33,9 +33,13 @@
     margin-top: 50px;
 }
 
-.how-it-works {
+.how-it-works .one-third {
     text-align: center;
     color: #1a1a1a;
+}
+
+h5 {
+    text-align: center;
 }
 
 .landing,
@@ -61,12 +65,18 @@ section.buy,
     border-bottom: 1px solid #d3d3d3;
 }
 
-.landing {
-    margin-top: 50px;
+
+/* Larger than mobile */
+
+@media (min-width: 400px) {
+    .landing {
+        margin-top: 50px;
+    }
 }
 
 footer {
     margin-top: 35px;
+    color: silver;
 }
 
 .cost {
@@ -80,15 +90,45 @@ footer {
     box-shadow: 0 0 10px #777777;
 }
 
+@media (min-width: 400px) {
+    .landing {
+        margin-top: 50px;
+    }
+    section.buy,
+    section.how-it-works,
+    section.tweets,
+    section.contact-us {
+        margin-top: 100px;
+        border-bottom: 1px dotted silver;
+    }
+}
+
+section.buy,
+section.how-it-works,
+section.tweets,
+section.contact-us {
+    margin-top: 50px;
+    border-bottom: 1px dotted silver;
+}
+
+h4 {
+    text-align: center;
+    margin-top: 20px;
+}
+
 textarea {
     transition: all 1s;
 }
 
+
 /* expand the text area on focus*/
+
 textarea:focus {
     height: 256px;
     font-size: 18px;
 }
+
+
 /* ------------------------------------------
   NAVIGATION STYLES
   (+ responsive-nav.css file is loaded in the <head>)
@@ -231,14 +271,6 @@ li {
     font-weight: bold;
 }
 
-section.buy,
-section.how-it-works,
-section.tweets,
-section.contact-us {
-    margin-top: 100px;
-    border-bottom: 1px dotted silver;
-}
-
 .nav-collapse a {
     border-bottom: 1px solid lightblue;
 }
@@ -246,11 +278,6 @@ section.contact-us {
 .nav-collapse a:hover {
     background: skyblue;
     color: black
-}
-
-h4 {
-    text-align: center;
-    margin-top: 20px;
 }
 
 

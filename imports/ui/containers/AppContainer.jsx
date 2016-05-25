@@ -5,6 +5,5 @@ import App from '../layouts/App.jsx';
 // creates a container around the app conponenet
 // & feeds in all the data sources
 export default createContainer(() => {
-  return {   
-  };
+    return {};
 }, App);

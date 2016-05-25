@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HowItWorks = ({name}) => (
-	<div className="row">
+	<div className="row">        
 		<div className="one-third column">
             <img className="how2img" src="images/write-pencil-icon.png" alt="A writing pencil"/> 
             <p>

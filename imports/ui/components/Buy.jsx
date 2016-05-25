@@ -5,7 +5,7 @@ const Buy = ({name}) => (
     	<textarea className="u-full-width" placeholder="Your Message Here …" id="exampleMessage">
     	</textarea>
         <p>Processing...</p>
-    	<input className="button-primary" value="buy -> £5" type="submit"/>
+    	<input className="button-primary" value="buy now" type="submit"/>
 	</form>
 );
 
