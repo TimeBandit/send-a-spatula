@@ -10,6 +10,7 @@ import React from 'react';
 import Buy from "../components/Buy";
 import HowItWorks from "../components/HowItWorks";
 import Header from "../components/Header";
+import TweetsContainer from "../containers/TweetsContainer";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 
@@ -42,6 +43,7 @@ const App = ({ content }) => (
 		</section>
 		<section id="tweets" className="tweets">
 			<h5>Tweets @sendaspatula</h5>
+			<TweetsContainer />
 		</section>
 		<section id="contact-us" className="contact-us">
 			<h5>Contact Us</h5>
