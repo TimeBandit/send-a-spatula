@@ -1,5 +1,3 @@
-
-
 import { Twit } from 'meteor/schiller:twit'
 
 // create a new instance of the API handler
@@ -10,7 +8,7 @@ export const twitterAPIInstance = new Twit({
     access_token_secret: Meteor.settings.private.access_token_secret
 });
 
-export let twitterAPIArgs = function(count = 20, 
+export let twitterAPIArgs = function(count = 5, 
     user_id = 'sendaspatula', 
     screen_name = 'sendaspatula') {
 

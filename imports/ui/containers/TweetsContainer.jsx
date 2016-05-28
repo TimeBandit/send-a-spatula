@@ -7,7 +7,7 @@ export default createContainer(() => {
     const tweetsHandle = Meteor.subscribe('Tweets');
 
     return {
-        loading: !tweetHandle.ready(),
+        loading: !tweetsHandle.ready(),
         tweets: Tweets.find({}).fetch(),
         connected: Meteor.status().connected
     };
