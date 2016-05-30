@@ -8,14 +8,18 @@ export const twitterAPIInstance = new Twit({
     access_token_secret: Meteor.settings.private.access_token_secret
 });
 
-export let twitterAPIArgs = function(count = 5, 
-    user_id = 'sendaspatula', 
-    screen_name = 'sendaspatula') {
+export const twitterAPIArgs = function(count = Meteor.settings.public.twitterComponentSettings.count,
+        user_id = Meteor.settings.public.twitterComponentSettings.user_id,
+        screen_name = Meteor.settings.public.twitterComponentSettings.screen_name) {
 
-	return {
-		count,
-		user_id,
-		screen_name
-	}
+    return {
+        count,
+        user_id,
+        screen_name
+    }
 
 };
+
+export const sayHello = function(string) {
+    console.log(`${string}`);
+}
