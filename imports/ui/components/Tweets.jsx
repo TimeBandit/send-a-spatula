@@ -1,6 +1,7 @@
 import React from 'react';
 import WaitingOnTweets from "./WaitingOnTweets";
 import TweetsProcessed from "./TweetsProcessed";
+import { _ } from 'meteor/underscore';
 
 export default class Tweets extends React.Component {
     constructor(props) {
@@ -21,15 +22,18 @@ export default class Tweets extends React.Component {
             loading,
             tweets,
             count,
+            docCount,
             connected,
         } = this.props;
+
+        console.log(`docCount:${docCount} | count:${count}  | tweets:${_.size(tweets)}`);
 
 
         return (
             <div className="row" style={{overflow: "hidden"}}>
-                {loading
-                    ? <WaitingOnTweets count={count}/> 
-                    : <TweetsProcessed count={count} tweets={tweets}/>
+                {docCount > 0
+                    ? <TweetsProcessed count={count} tweets={tweets}/>
+                    : <WaitingOnTweets count={count}/> 
                 }
             </div>
         );

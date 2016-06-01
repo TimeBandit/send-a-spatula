@@ -1,6 +1,7 @@
 import React from 'react';
 import { _ } from 'meteor/underscore';
 import TweetDiv from "./TweetDiv";
+import LoadMoreTweets from "./LoadMoreTweets";
 
 export class TweetsProcessed extends React.Component {
     constructor(props) {
@@ -35,7 +36,7 @@ export class TweetsProcessed extends React.Component {
         return (
             <div className="column" style={style}>
                 {this.buildTweets()}
-                <button>See more..</button>
+                <LoadMoreTweets />
             </div>
         );
     }

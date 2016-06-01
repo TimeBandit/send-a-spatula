@@ -12,9 +12,7 @@ export class WaitingOnTweets extends React.Component {
 
     buildTweets() {
         let range = _.range(this.props.count);
-
         let result = _.map(range, function(value, key, list) {
-
             return <TweetDiv key={key}/>
         });
 
