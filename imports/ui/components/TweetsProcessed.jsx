@@ -7,21 +7,52 @@ export class TweetsProcessed extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            storedTweets: [],
+            visibleTweets: [],
+            storeEmpty: false
         };
+        this.addTweets = this.addTweets.bind(this);
+        this.updateStateTweets = this.updateStateTweets.bind(this);
     }
 
-    buildTweets() {
+    updateStateTweets(newVisible, newStored) {
 
-        let result = _.map(this.props.tweets, function(value, key, list) {
-            let href = value.entities.media[0].url;
-            let imgSrc = (value.entities.media[0].media_url).replace('http', 'https');
-            let alt = value.text.split('http', 1)[0];
+        this.setState({visibleTweets: newVisible});
+        this.setState({storedTweets: newStored});
+    }
 
-            return <TweetDiv key={value.id} href={href} imgSrc={imgSrc} alt={alt}/>
-        });
+    componentDidMount() {
+        console.log("TweetsProcess has mounted")
+        
+        // retrieve tweets from props
+        let storedTweets = this.props.tweets;
 
-        return result;
+        let visibleTweets = []
+
+        // move first 10 tweets in visibleTweets
+        for (var i = 0; i < 7; i++) {
+
+            visibleTweets.push(storedTweets.pop());
+        }
+
+        // update tweet collection to state
+        this.updateStateTweets(visibleTweets, storedTweets);
+    }
+
+    addTweets() {
+        if (this.state.storedTweets.length !== 0) {
+
+            // pop one tweets from storedTweets into visible tweets
+            let newStored = this.state.storedTweets,
+                newVisible = this.state.visibleTweets;
+
+            newVisible.push(newStored.pop());
+
+            this.updateStateTweets(newVisible, newStored);
+
+        } else {
+            this.setState({storeEmpty: true});
+        }
     }
 
 
@@ -35,8 +66,8 @@ export class TweetsProcessed extends React.Component {
 
         return (
             <div className="column" style={style}>
-                {this.buildTweets()}
-                <LoadMoreTweets />
+                {this.state.visibleTweets}
+                <button onClick={this.addTweets}>{this.state.storeEmpty? "Thats all folks..." : "Load More..."}</button>                
             </div>
         );
     }

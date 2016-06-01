@@ -9,7 +9,8 @@ Meteor.publish('tweets.Photos', function(num) {
         self = this;
 
     const publishedKeys = {};
-
+    console.log(publishedKeys);
+    
     res = twitterAPIInstance.get('statuses/user_timeline', args,
         function(err, tweets, response) {
             sayHello('Fetching photos from Twitter');
@@ -19,11 +20,18 @@ Meteor.publish('tweets.Photos', function(num) {
 
                 if (value.entities.media != undefined) {
 
-                    /* add each new tweet to the collection */
+                    /* ensure old tweets not republished */
                     if (!publishedKeys[value.id]) {
 
+                        let newDoc = {
+                            href: value.entities.media[0].url,
+                            imgSrc: (value.entities.media[0].media_url).replace('http', 'https'),
+                            alt: value.text.split('http', 1)[0],
+                            tweetId: value.id
+                        };
+
                         publishedKeys[value.id] = true;
-                        self.added('TweetData', value.id, value);
+                        self.added('TweetData', value.id.toString(), newDoc);
                     }
                 };
 

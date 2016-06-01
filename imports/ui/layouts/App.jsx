@@ -42,7 +42,7 @@ const App = ({ content }) => (
 			<HowItWorks />
 		</section>
 		<section id="tweets" className="tweets">
-			<h5>Tweets @sendaspatula</h5>
+			<h5>Tweets <a href="https://twitter.com/sendaspatula" target="_blank">@sendaspatula</a></h5>
 			<TweetsContainer />
 		</section>
 		<section id="contact-us" className="contact-us">

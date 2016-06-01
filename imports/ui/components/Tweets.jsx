@@ -1,7 +1,10 @@
 import React from 'react';
+import { _ } from 'meteor/underscore';
 import WaitingOnTweets from "./WaitingOnTweets";
 import TweetsProcessed from "./TweetsProcessed";
-import { _ } from 'meteor/underscore';
+import TweetDiv from "./TweetDiv";
+
+// todo: manages no state, re-write as pure component
 
 export default class Tweets extends React.Component {
     constructor(props) {
@@ -10,9 +13,21 @@ export default class Tweets extends React.Component {
             menuOpen: false,
             showConnectionIssue: false,
         };
+        this.buildTweets = this.buildTweets.bind(this);
     }
-    printTweets(n) {
-        console.log(n);
+
+    buildTweets() {
+        let result = _.map(this.props.publishedTweets, function(value, key, list) {
+
+            let href = value.href;
+            let imgSrc = value.imgSrc;
+            let alt = value.alt;
+
+            return <TweetDiv key={value._id} href={href} imgSrc={imgSrc} alt={alt}/>
+        });
+
+        // TweetDiv's have nique keys - verified
+        return result;
     }
 
     render() {
@@ -20,28 +35,25 @@ export default class Tweets extends React.Component {
 
         const {
             loading,
-            tweets,
-            count,
+            publishedTweets,
             docCount,
             connected,
         } = this.props;
 
-        console.log(`docCount:${docCount} | count:${count}  | tweets:${_.size(tweets)}`);
-
-
         return (
             <div className="row" style={{overflow: "hidden"}}>
                 {docCount > 0
-                    ? <TweetsProcessed count={count} tweets={tweets}/>
-                    : <WaitingOnTweets count={count}/> 
+                    ? <TweetsProcessed tweets={this.buildTweets()}/>
+                    : <WaitingOnTweets count={docCount}/> 
                 }
             </div>
         );
     }
 }
 
-// Tweets.propTypes = {
-//  loading: React.propTypes.bool,
-//  tweets: React.propTypes.array,
-//  connected: React.propTypes.bool
-// }
+Tweets.propTypes = {
+ loading: React.PropTypes.bool,
+ publishedTweets: React.PropTypes.array,
+ docCount: React.PropTypes.number,
+ connected: React.PropTypes.bool
+}
