@@ -19,7 +19,3 @@ export const twitterAPIArgs = function(count = Meteor.settings.public.twitterCom
     }
 
 };
-
-export const sayHello = function(string) {
-    console.log(`${string}`);
-}

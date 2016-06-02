@@ -7,7 +7,7 @@ import '../stylesheets/styles.css'
 
 // layout
 import React from 'react';
-import Buy from "../components/Buy";
+import Buy from "../components/buy/Buy";
 import HowItWorks from "../components/HowItWorks";
 import Header from "../components/Header";
 import TweetsContainer from "../containers/TweetsContainer";

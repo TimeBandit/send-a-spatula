@@ -13,7 +13,7 @@ Meteor.publish('tweets.Photos', function(num) {
     
     res = twitterAPIInstance.get('statuses/user_timeline', args,
         function(err, tweets, response) {
-            sayHello('Fetching photos from Twitter');
+            console.log('Fetching photos from Twitter');
 
             _.each(tweets, function(value, key, list) {
                 console.log(`Processing tweet id: ${value.id}`);
