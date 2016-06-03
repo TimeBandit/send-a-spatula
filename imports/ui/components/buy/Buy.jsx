@@ -42,18 +42,10 @@ export class Buy extends React.Component {
         }
     }
 
-    takePayment(e) {
-
-    }
-
     render() {
         return (
             <form>
-                <SpatulaMessage 
-                    handle={this.onChange} 
-                    value={this.state.message} 
-                    placeholder="Your Message Here In 70 Characters…"
-                    handlemaxLength="70"/>
+                <SpatulaMessage handle={this.onChange} value={this.state.message} placeholder="Your Message Here In 70 Characters…"/>
                 <PaymentStatus />
                 <Pay />
                 <input className="button-primary" value="buy now" type="submit"/>

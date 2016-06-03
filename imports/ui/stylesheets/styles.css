@@ -122,13 +122,14 @@ h4 {
 
 textarea {
     transition: all 1s;
+    resize: none;
 }
 
 
 /* expand the text area on focus*/
 
 textarea:focus {
-    height: 256px;
+    height: 130px;
     font-size: 18px;
 }
 

@@ -1,17 +1,18 @@
 import React from 'react';
 
-const SpatulaMessage = ({ handle, value, maxLength, placeholder }) => {
+const SpatulaMessage = ({ handle, value, placeholder }) => {
 
     handleChange = (e) => {
-    	console.log(this.props);
-    	this.props.handle(e);
+        handle(e);
     };
 
     return (
         <textarea className="u-full-width"
+	    type="text" 
+    	rows= "5"
 	    onChange={handleChange} 
 	    value={value} 
-	    maxLength={parseInt(maxLength)} 
+	    maxLength="70"
 	    placeholder={placeholder}
 	    id="message">
     </textarea>
