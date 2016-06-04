@@ -22,7 +22,6 @@ react-meteor-data
 kadira:flow-router
 schiller:twit
 mrgalaxy:stripe
-kevohagan:sweetalert
 fortawesome:fontawesome
 session
 mdg:validated-method

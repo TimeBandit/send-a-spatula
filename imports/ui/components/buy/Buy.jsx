@@ -1,5 +1,4 @@
 import React from 'react';
-import StripeInstance from "../../helpers/StripeInstance";
 import SpatulaMessage from "./SpatulaMessage";
 import PaymentStatus from "./PaymentStatus";
 import Pay from "./Pay";
@@ -47,8 +46,7 @@ export class Buy extends React.Component {
             <form>
                 <SpatulaMessage handle={this.onChange} value={this.state.message} placeholder="Your Message Here In 70 Characters…"/>
                 <PaymentStatus />
-                <Pay />
-                <input className="button-primary" value="buy now" type="submit"/>
+                <Pay message={this.state.message}/>
             </form>
         );
     }
