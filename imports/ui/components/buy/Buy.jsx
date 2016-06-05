@@ -9,10 +9,13 @@ export class Buy extends React.Component {
 
         this.state = {
             message: "",
-            buttonDisabled: true
+            buttonDisabled: true,
+            paymentProcessing: false
         };
 
         this.onChange = this.onChange.bind(this);
+        this.setProcessingState = this.setProcessingState.bind(this);
+        this.setMessage = this.setMessage.bind(this);
     }
 
     componentDidMount() {
@@ -41,12 +44,24 @@ export class Buy extends React.Component {
         }
     }
 
+    setProcessingState(state) {
+        this.setState({
+            paymentProcessing: state
+        });
+    }
+
+    setMessage(message) {
+        this.setState({
+            message: message
+        });
+    }
+
     render() {
         return (
             <form>
-                <SpatulaMessage handle={this.onChange} value={this.state.message} placeholder="Your Message Here In 70 Characters…"/>
+                <SpatulaMessage handle={this.onChange} value={this.state.message} placeholder="Your message here in 70 characters…"/>
                 <PaymentStatus />
-                <Pay message={this.state.message}/>
+                <Pay message={this.state.message} setMessage={this.setMessage} setProcessingState={this.setProcessingState}/>
             </form>
         );
     }

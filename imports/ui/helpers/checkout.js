@@ -1,4 +1,5 @@
-const StripeInstance = StripeCheckout.configure({
+// initialize stripe
+const checkout = StripeCheckout.configure({
     key: Meteor.settings.public.stripe,
     image: 'images/spatula-256px-500pxcv.png',
     name: 'Post a Spatula',
@@ -12,4 +13,4 @@ const StripeInstance = StripeCheckout.configure({
     shippingAddress: true
 });
 
-export default StripeInstance;
+export default checkout;
