@@ -17,7 +17,7 @@ const Pay = ({ message, setProcessingState, setMessage }) => {
                     metadata = args;
 
                 metadata.message = message;
-
+                console.log(typeof metadata)
                 // set charge processingStatus to true
                 setProcessingState(true);
 

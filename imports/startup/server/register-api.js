@@ -4,4 +4,7 @@
 import "../../api/tweets/server/publications.js";
 
 // register in server and import them into each ui componenet that needs them
-import "../../api/stripe/methods";
+import "../../api/stripe/methods.js";
+
+// business logic
+import charge from '../../api/stripe/server/charge';
