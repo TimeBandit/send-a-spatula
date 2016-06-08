@@ -1,80 +1,46 @@
 import React from 'react';
 import checkout from "../../helpers/checkout";
-import { chargeCard } from "/imports/api/stripe/methods.js"
+import { createCharge } from "/imports/api/stripe/methods.js"
 
-const Pay = ({ message, setProcessingState, setMessage }) => {
+const Pay = ({ message, setMessage, paymentInProgressUpdate, shake }) => {
 
     handlePayment = (e) => {
 
         e.preventDefault();
 
-        checkout.open({
+        if (!message.length) {
 
-            token: function(res, args) {
+            shake();
 
-                /* extract token */
-                let stripeToken = res.id,
-                    metadata = args;
+        } else {
 
-                metadata.message = message;
-                console.log(typeof metadata)
-                // set charge processingStatus to true
-                setProcessingState(true);
+            checkout.open({
 
-                chargeCard.call({
-                    amount: 500,
-                    currency: 'GBP',
-                    source: stripeToken,
-                    metadata: metadata,
-                }, (err, res) => {
-                    console.log(err, res);
-                });
-                
-         //        Meteor.call('chargeCard',
-         //            500,
-         //            'GBP',
-         //            stripeToken,
-         //            metadata,
-         //            function(error, result) {
+                token: function(res, args) {
 
-         //                // set charge processingStatus to true
-         //                setProcessingState(false);
-         //                setMessage("");
+                    /* extract token */
+                    let stripeToken = res.id,
+                        metadata = args;
 
-         //                // if error, set the paymentStatus flag to false
-         //                if (result.data) {
-         //                    // if succesfull, set paymentStatus flag to success
+                    metadata.message = message;
 
-         //                    let msg = 'Thank you ! \
-									// Your surprise is on its \
-									// way to ' + args.shipping_name + '!';
+                    // set charge processingStatus to true
+                    paymentInProgressUpdate(true);
 
-         //                    swal({
-         //                        title: result.data.status,
-         //                        text: msg,
-         //                        type: "success",
-         //                        imageSize: "80x80"
-         //                    });
+                    createCharge.call({
+                        amount: 500,
+                        currency: 'GBP',
+                        source: stripeToken,
+                        metadata: metadata,
+                    }, (err, res) => {
+                        console.log('stripe.charge result ', err, res);
+                    });
 
-         //                    setProcessingState(false);
 
-         //                } else {
+                }
+            });
+        }
 
-         //                    let msg = 'Oops your card provider \
-	        // 						declined this transaction. \
-	        // 						You have not been charged';
-
-         //                    swal({
-         //                        title: result.error.message,
-         //                        text: msg,
-         //                        type: "error",
-         //                        imageSize: "80x80"
-         //                    });
-         //                }
-
-         //            });
-            }
-        });
     };
 
     return (

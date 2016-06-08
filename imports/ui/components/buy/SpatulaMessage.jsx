@@ -1,13 +1,13 @@
 import React from 'react';
 
-const SpatulaMessage = ({ handle, value, placeholder }) => {
+const SpatulaMessage = ({ handle, value, placeholder, shake}) => {
 
     handleChange = (e) => {
         handle(e);
     };
 
     return (
-        <textarea className="u-full-width"
+        <textarea className={shake ? "u-full-width animated shake" : "u-full-width"}
 	    type="text" 
     	rows= "5"
 	    onChange={handleChange} 

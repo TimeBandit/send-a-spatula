@@ -124,6 +124,7 @@ textarea {
     transition: all 1s;
     height: 100px;
     resize: none;
+    animation-delay: 0.1s;
 }
 
 

@@ -10,12 +10,14 @@ export class Buy extends React.Component {
         this.state = {
             message: "",
             buttonDisabled: true,
-            paymentProcessing: false
+            paymentInProgress: false,
+            shake: false
         };
 
         this.onChange = this.onChange.bind(this);
-        this.setProcessingState = this.setProcessingState.bind(this);
+        this.paymentInProgressUpdate = this.paymentInProgressUpdate.bind(this);
         this.setMessage = this.setMessage.bind(this);
+        this.shake = this.shake.bind(this);
     }
 
     componentDidMount() {
@@ -44,24 +46,43 @@ export class Buy extends React.Component {
         }
     }
 
-    setProcessingState(state) {
+    paymentInProgressUpdate(state) {
+
         this.setState({
             paymentProcessing: state
         });
     }
 
     setMessage(message) {
+
         this.setState({
             message: message
         });
     }
 
+    shake(){
+
+        let self = this;
+        self.setState({shake: true});
+
+        Meteor.setTimeout(function() {
+
+            self.setState({shake: false});
+        }, 1000);
+    }
+
     render() {
         return (
             <form>
-                <SpatulaMessage handle={this.onChange} value={this.state.message} placeholder="Your message here in 70 characters…"/>
-                <PaymentStatus />
-                <Pay message={this.state.message} setMessage={this.setMessage} setProcessingState={this.setProcessingState}/>
+                <SpatulaMessage handle={this.onChange} 
+                value={this.state.message} 
+                placeholder="Your message here in 70 characters…"
+                shake={this.state.shake}/>
+                <PaymentStatus state={this.state.message}/>
+                <Pay message={this.state.message} 
+                setMessage={this.setMessage} 
+                paymentInProgressUpdate={this.paymentInProgressUpdate}
+                shake={this.shake}/>
             </form>
         );
     }
