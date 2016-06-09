@@ -34,6 +34,47 @@ const Pay = ({ message, setMessage, paymentInProgressUpdate, shake }) => {
                         metadata: metadata,
                     }, (err, res) => {
                         console.log('stripe.charge result ', err, res);
+
+                        if (err) {
+                            // error handling
+
+                            // clear paymentInProgress flag
+                            paymentInProgressUpdate(false);
+
+                            // display swal with eror message
+                            let msg = 'Oops your card provider \
+                                            declined this transaction. \
+                                            You have not been charged';
+
+                            swal({
+                                title: err.message,
+                                text: msg,
+                                type: "error",
+                                imageSize: "80x80"
+                            });
+
+                        } else {
+                            // success handling
+
+                            // clear paymentInProgress flag
+                            paymentInProgressUpdate(false);
+
+                            // display swal with suxxess message
+                            let msg = `Thank you ! \
+                                    Your surprise is on its \
+                                    way to ${res.metadata.shipping_name} !`;
+
+                            swal({
+                                title: res.status,
+                                text: msg,
+                                type: "success",
+                                imageSize: "80x80"
+                            });
+
+                            // clear the message
+                            setMessage("");
+                        }
+
                     });
 
 

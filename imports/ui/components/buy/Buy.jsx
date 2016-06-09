@@ -78,7 +78,7 @@ export class Buy extends React.Component {
                 value={this.state.message} 
                 placeholder="Your message here in 70 characters…"
                 shake={this.state.shake}/>
-                <PaymentStatus state={this.state.message}/>
+                <PaymentStatus paymentInProgress={this.state.paymentInProgress}/>
                 <Pay message={this.state.message} 
                 setMessage={this.setMessage} 
                 paymentInProgressUpdate={this.paymentInProgressUpdate}

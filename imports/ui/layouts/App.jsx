@@ -3,6 +3,7 @@ import '../stylesheets/normalize.css'
 import '../stylesheets/skeleton.css'
 import '../stylesheets/animate.css'
 import '../stylesheets/responsive-nav.css'
+import '../stylesheets/font-awesome.min.css'
 import '../stylesheets/styles.css'
 
 // layout
