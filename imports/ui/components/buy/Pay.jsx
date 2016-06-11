@@ -2,7 +2,7 @@ import React from 'react';
 import checkout from "../../helpers/checkout";
 import { createCharge } from "/imports/api/stripe/methods.js"
 
-const Pay = ({ message, setMessage, paymentInProgressUpdate, shake }) => {
+const Pay = ({ message, setMessage, setPaymentProcessing, shake }) => {
 
     handlePayment = (e) => {
 
@@ -25,7 +25,11 @@ const Pay = ({ message, setMessage, paymentInProgressUpdate, shake }) => {
                     metadata.message = message;
 
                     // set charge processingStatus to true
-                    paymentInProgressUpdate(true);
+                    setPaymentProcessing(true);
+                    
+                    // Meteor.setTimeout(function() {
+                    //     console.log('pausing')
+                    // }, 10000);
 
                     createCharge.call({
                         amount: 500,
@@ -33,13 +37,10 @@ const Pay = ({ message, setMessage, paymentInProgressUpdate, shake }) => {
                         source: stripeToken,
                         metadata: metadata,
                     }, (err, res) => {
-                        console.log('stripe.charge result ', err, res);
+                        // console.log('stripe.charge result ', err, res);
 
                         if (err) {
                             // error handling
-
-                            // clear paymentInProgress flag
-                            paymentInProgressUpdate(false);
 
                             // display swal with eror message
                             let msg = 'Oops your card provider \
@@ -56,8 +57,6 @@ const Pay = ({ message, setMessage, paymentInProgressUpdate, shake }) => {
                         } else {
                             // success handling
 
-                            // clear paymentInProgress flag
-                            paymentInProgressUpdate(false);
 
                             // display swal with suxxess message
                             let msg = `Thank you ! \
@@ -74,6 +73,9 @@ const Pay = ({ message, setMessage, paymentInProgressUpdate, shake }) => {
                             // clear the message
                             setMessage("");
                         }
+
+                        // clear paymentInProgress flag
+                        setPaymentProcessing(false);
 
                     });
 

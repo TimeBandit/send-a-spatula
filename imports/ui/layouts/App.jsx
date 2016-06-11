@@ -8,15 +8,11 @@ import '../stylesheets/styles.css'
 
 // layout
 import React from 'react';
-import Buy from "../components/buy/Buy";
-import HowItWorks from "../components/HowItWorks";
 import Header from "../components/Header";
-import TweetsContainer from "../containers/TweetsContainer";
-import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
+import Home from '../components/Home.jsx';
 
-
-const App = ({ content }) => (
+const App = ( props ) => (
     <div className="container">
 		<section className="header">
 			<div className="row">
@@ -24,37 +20,10 @@ const App = ({ content }) => (
 					<Header />
 				</div>
 			</div>
-		</section>
-		
-		<section id="buy" className="buy">
-			<div className="row">
-                <div className="column">
-                    <img className="spatula animated jello u-max-full-width" src="images/outline-spatula-horizontal-message.svg" alt=""/>
-                </div>
-            </div>
-			<div className="row">
-				<div className="column">
-					<Buy />
-				</div>
-			</div>
-		</section>
-		<section id="how-it-works" className="how-it-works">
-			<h5>How-it-Works</h5>
-			<HowItWorks />
-		</section>
-		<section id="tweets" className="tweets">
-			<h5>Tweets <a href="https://twitter.com/sendaspatula" target="_blank">@sendaspatula</a></h5>
-			<TweetsContainer />
-		</section>
-		<section id="contact-us" className="contact-us">
-			<h5>Contact Us</h5>
-			<div className="row">
-				<div className="column">
-					<ContactUs />
-				</div>
-			</div>
-		</section>
+		</section>		
+		{props.content}
 		<section className="footer">
+			<Home />
 			<div className="row">
 				<div className="column">
 					<Footer />

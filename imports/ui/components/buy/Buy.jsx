@@ -9,13 +9,12 @@ export class Buy extends React.Component {
 
         this.state = {
             message: "",
-            buttonDisabled: true,
-            paymentInProgress: false,
+            paymentProcessing: false,
             shake: false
         };
 
         this.onChange = this.onChange.bind(this);
-        this.paymentInProgressUpdate = this.paymentInProgressUpdate.bind(this);
+        this.setPaymentProcessing = this.setPaymentProcessing.bind(this);
         this.setMessage = this.setMessage.bind(this);
         this.shake = this.shake.bind(this);
     }
@@ -46,7 +45,7 @@ export class Buy extends React.Component {
         }
     }
 
-    paymentInProgressUpdate(state) {
+    setPaymentProcessing(state) {
 
         this.setState({
             paymentProcessing: state
@@ -78,10 +77,10 @@ export class Buy extends React.Component {
                 value={this.state.message} 
                 placeholder="Your message here in 70 characters…"
                 shake={this.state.shake}/>
-                <PaymentStatus paymentInProgress={this.state.paymentInProgress}/>
+                <PaymentStatus paymentProcessing={this.state.paymentProcessing}/>
                 <Pay message={this.state.message} 
                 setMessage={this.setMessage} 
-                paymentInProgressUpdate={this.paymentInProgressUpdate}
+                setPaymentProcessing={this.setPaymentProcessing}
                 shake={this.shake}/>
             </form>
         );

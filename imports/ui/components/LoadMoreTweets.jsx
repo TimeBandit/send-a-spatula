@@ -1,6 +1,5 @@
 import React from 'react';
 import { Session } from 'meteor/session';
-import PrintFileName from "../helpers/PrintFileName";
 
 const LoadMoreTweets = ({ name }) => {
 
