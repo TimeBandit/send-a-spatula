@@ -22,7 +22,6 @@ export class TweetsProcessed extends React.Component {
     }
 
     componentDidMount() {
-        console.log("TweetsProcess has mounted")
         
         // retrieve tweets from props
         let storedTweets = this.props.tweets;

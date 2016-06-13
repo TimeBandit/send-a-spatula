@@ -30,14 +30,7 @@
     width: 275px;
     margin: 0 auto;
     text-align: center;
-}
-
-.buy {
     margin-top: 50px;
-}
-
-form {
-    margin-top: 25px;
 }
 
 .how-it-works .one-third {
@@ -62,14 +55,13 @@ section.buy,
     overflow: auto;
 }
 
-
 /*.landing,*/
-
 section.buy,
 .how-it-works,
 .tweets,
 .contact-us,
-.disclaimer {
+.disclaimer
+{
     padding: 20px 0px;
     border-bottom: 1px solid #d3d3d3;
 }
@@ -145,6 +137,14 @@ textarea:focus {
     font-weight: bold;
 }
 
+/* footer stlyes */
+footer {
+    color: grey;
+}
+footer ul {
+    list-style: none;
+    font-size: 9pt;
+}
 
 /* ------------------------------------------
   NAVIGATION STYLES
