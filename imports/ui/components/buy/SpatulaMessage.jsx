@@ -20,3 +20,11 @@ const SpatulaMessage = ({ handle, value, placeholder, shake}) => {
 };
 
 export default SpatulaMessage;
+
+
+SpatulaMessage.propTypes = {
+ handle: React.PropTypes.func,
+ value: React.PropTypes.string,
+ placeholder: React.PropTypes.string,
+ shake: React.PropTypes.bool
+}

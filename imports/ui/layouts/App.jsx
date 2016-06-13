@@ -22,40 +22,8 @@ const App = (props) => (
 			</div>
 		</section>		
 		{props.content}
-		<footer>
-			<div className="row">
-				<div className="six columns">
-					<ul>
-						<li>
-							Send a Spatula © 2016 All rights reserved.
-						</li>
-						<li>
-							Icons by <a href="http://www.doublejdesign.co.uk/">Double-J Design</a>
-						</li>
-						<li>
-							<a href={Meteor.absoluteUrl('disclaimer')}>Disclaimer</a>
-						</li>
-						<li>
-							<img src="images/comodo_secure_seal_76x26_transp.png" 
-							alt="Send a Spatula is a secure and authenticated website"
-							title="Send a Spatula is a secure and authenticated website"/>
-						</li>
-					</ul>
-				</div>
-				<div className="three columns">
-				</div>
-				<div className="three columns">
-				</div>
-			</div>
-		</footer>
-		<section className="footer">
-			<Home />
-			<div className="row">
-				<div className="column">
-					<Footer />
-				</div>
-			</div>
-		</section>
+		
+		<Footer />
 	</div>
 );
 

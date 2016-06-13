@@ -49,6 +49,7 @@ section.buy,
 .contact-us {
     /*border-bottom: 1px solid #dcdcdc;*/
     overflow: auto;
+    text-align: center;
 }
 
 .tweets {
@@ -141,11 +142,19 @@ textarea:focus {
 footer {
     color: grey;
 }
-footer ul {
-    list-style: none;
-    font-size: 9pt;
+
+.social {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+footer p {
+    text-align: center;
 }
 
+p.extras {
+    font-size: 9pt;
+}
 /* ------------------------------------------
   NAVIGATION STYLES
   (+ responsive-nav.css file is loaded in the <head>)

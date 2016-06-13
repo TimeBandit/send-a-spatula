@@ -22,3 +22,10 @@ const TweetDiv = ({ k, href, imgSrc, alt }) => (
 );
 
 export default TweetDiv;
+
+TweetDiv.propTypes = {
+ k: React.PropTypes.string,
+ href: React.PropTypes.string,
+ imgSrc: React.PropTypes.string,
+ alt: React.PropTypes.string
+}

@@ -39,3 +39,7 @@ export class WaitingOnTweets extends React.Component {
 
 
 export default WaitingOnTweets;
+
+WaitingOnTweets.propTypes = {
+ count: React.PropTypes.number
+};

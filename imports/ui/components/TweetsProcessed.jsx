@@ -74,3 +74,7 @@ export class TweetsProcessed extends React.Component {
 
 
 export default TweetsProcessed;
+
+TweetsProcessed.propTypes = {
+ tweets: React.PropTypes.array
+}

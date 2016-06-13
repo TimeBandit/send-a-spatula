@@ -4,7 +4,6 @@ import React from 'react';
 import Buy from './buy/Buy.jsx';
 import HowItWorks from './HowItWorks.jsx';
 import TweetsContainer from '../containers/TweetsContainer.jsx';
-import ContactUs from './ContactUs.jsx';
 import Home from './Home.jsx';
 
 const Main = ({}) => {
@@ -39,11 +38,11 @@ const Main = ({}) => {
 			<section id="contact-us" className="contact-us">
 				<Home />
 				<h5>Contact Us</h5>
-				<div className="row">
-					<div className="column">
-						<ContactUs />
-					</div>
-				</div>
+				<p>
+					If you have any queries, questions or comments, please
+					send us an email to admin 'at' sendaspatula.com or contact 
+					us via one of the social media accounts below.
+				</p>
 			</section>
         </span>
     )

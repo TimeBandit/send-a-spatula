@@ -16,3 +16,8 @@ const PaymentStatus = ({ paymentProcessing }) => {
 }
 
 export default PaymentStatus;
+
+PaymentStatus.propTypes = {
+ paymentProcessing: React.PropTypes.bool
+}
+

@@ -93,3 +93,10 @@ const Pay = ({ message, setMessage, setPaymentProcessing, shake }) => {
 };
 
 export default Pay;
+
+Pay.propTypes = {
+ message: React.PropTypes.string,
+ setMessage: React.PropTypes.func,
+ setPaymentProcessing: React.PropTypes.func,
+ shake: React.PropTypes.func
+}

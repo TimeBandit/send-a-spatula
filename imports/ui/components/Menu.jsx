@@ -6,28 +6,6 @@ import smoothScroll from "../helpers/smoothScroll";
 // components
 import React from 'react';
 
-let pathFor = (path, params) => {
-    console.log(params);
-
-    let query = params && params.query ? FlowRouter._qs.parse(params.query) : {};
-    return FlowRouter.path(path, params, query);
-};
-
-let urlFor = (path, params) => {
-    return Meteor.absoluteUrl(pathFor(path, params));
-};
-
-let currentRoute = (route) => {
-    FlowRouter.watchPathChange();
-    return FlowRouter.current().route.name === route ? 'active' : '';
-};
-
-FlowHelpers = {
-    pathFor: pathFor,
-    urlFor: urlFor,
-    currentRoute: currentRoute
-};
-
 export default class Menu extends React.Component {
     componentDidMount() {
         $(responsiveNavInit());
@@ -37,7 +15,7 @@ export default class Menu extends React.Component {
     render() {
         return (
             <nav id="nav" className="nav-collapse">
-				<ul className="bg-green">
+				<ul className="">
 					<li>
 						<a href={Meteor.absoluteUrl('#how-it-works')}>How-it-Works</a>
 					</li>
