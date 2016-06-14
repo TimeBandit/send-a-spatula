@@ -1,5 +1,4 @@
 import React from 'react'
-import flowHelpers from '../helpers/flowHelpers';
 
 const Footer = ({}) => (
     <footer>
@@ -28,7 +27,6 @@ const Footer = ({}) => (
 				Send a Spatula © 2016 All rights reserved.
 			</p>
 			<p className="extras">
-				<a href={flowHelpers.pathFor("/disclaimer")}>Disclaimer. </a>				
 				Icons by <a href="http://www.doublejdesign.co.uk/">Double-J Design.</a> 
 			</p>
 		</div>
