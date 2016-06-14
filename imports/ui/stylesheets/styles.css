@@ -146,6 +146,9 @@ footer {
 
 .social {
     display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
     flex-flow: row wrap;
     justify-content: space-between;
 }
