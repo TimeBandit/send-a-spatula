@@ -2,36 +2,18 @@ import { Meteor } from 'meteor/meteor';
 
 // send initial set of tweet images to client
 Meteor.startup(() => {
-    Meteor.makeAsync = function(fn, context) {
-        return function( /* arguments */ ) {
-            var self = context || this;
-            var newArgs = _.toArray(arguments);
-            var callback;
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-            for (var i = newArgs.length - 1; i >= 0; --i) {
-                var arg = newArgs[i];
-                var type = typeof arg;
-                if (type !== "undefined") {
-                    if (type === "function") {
-                        callback = arg;
-                    }
-                    break;
-                }
-            }
-
-            if (!callback) {
-                var fut = new Future();
-                callback = function(error, data) {
-                    fut.return({ error: error, data: data });
-                };
-
-                ++i;
-            }
-
-            newArgs[i] = Meteor.bindEnvironment(callback);
-            var result = fn.apply(self, newArgs);
-            return fut ? fut.wait() : result;
-        };
-    };
-
+    ga('create', 'UA-39390892-7', 'auto');
+    ga('send', 'pageview');
 });
