@@ -1,4 +1,4 @@
-# send-a-spatula
+# [sendaspatula.com](http://sendaspatula.com)
 
 A Meteor 1.3 portfolio project
 
