@@ -8,7 +8,7 @@ let style = {
 const Home = ({}) => {
     return (
         <a href="#nav">
-        	<i className="fa fa-home u-pull-right" aria-hidden="true" style={style}></i>
+        	<i className="fa fa-arrow-circle-up u-pull-right" aria-hidden="true" style={style}></i>
 		</a>
     )
 }

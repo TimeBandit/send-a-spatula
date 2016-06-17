@@ -144,21 +144,21 @@ footer {
     color: grey;
 }
 
-.social {
+.social, .shares, .info {
     display: flex;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
 
-    flex-direction: row;
-    -webkit-flex-direction: row;
-    -moz-flex-direction: row;
-    -ms-flex-direction: row;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
     
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;*/
     
     justify-content: space-between;
     -webkit-justify-content: space-between;
@@ -171,6 +171,26 @@ footer p {
 
 p.extras {
     font-size: 9pt;
+}
+
+.credits, .disclaimer {
+    height: 22px;
+    background-color: rgba(30, 174, 219, 0.5);
+    border-radius: 5px;
+    color: white;
+    /*font-weight: bold;*/
+    padding: 3px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.discStyle {
+    font-size: 8px;
+    text-align: justify;
+}
+
+.sweet-alert > p:nth-child(7) {
+    line-height: 0.5;
 }
 /* ------------------------------------------
   NAVIGATION STYLES
