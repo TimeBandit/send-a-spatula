@@ -194,7 +194,11 @@ p.extras {
 }
 
 .fb-like, .tw-like {
-    margin-top: 3px
+    margin-top: 3px;
+}
+
+.twitter, .facebook {
+    margin-top: 2px;
 }
 /* ------------------------------------------
   NAVIGATION STYLES
