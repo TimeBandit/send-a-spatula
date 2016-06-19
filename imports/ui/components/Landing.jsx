@@ -1,7 +1,7 @@
 import React from 'react';
 
-const WelcomeComponent = ({name}) => (
-	<span>
+const WelcomeComponent = ({ name }) => (
+    <span>
 		<h1 className="title animated zoomInDown">
 			Send a Spatula
 		</h1>

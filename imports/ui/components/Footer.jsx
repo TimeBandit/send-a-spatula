@@ -1,4 +1,6 @@
 import React from 'react'
+import Disclaimer from './Disclaimer.jsx';
+import Credits from './Credits.jsx';
 
 const Footer = ({}) => (
     <footer>
@@ -19,7 +21,18 @@ const Footer = ({}) => (
 						<i className="fa fa-2x fa-envelope" aria-hidden="true"></i>
 					</a>
 				</div>					
-			</div>				
+				<Credits />
+				<Disclaimer />
+				<div className="fb-like" 
+			        data-href="http://www.your-domain.com/your-page.html" 
+					data-layout="standard" 
+					data-action="like" 
+					data-show-faces="true">
+				</div>
+		        <div className="tw-like">
+		        	<a href="https://twitter.com/share" className="twitter-share-button">Tweet</a>
+		        </div>
+			</div>
 		</div>
 		<br/>
 		<div>
@@ -27,7 +40,7 @@ const Footer = ({}) => (
 				Send a Spatula © 2016 All rights reserved.
 			</p>
 			<p className="extras">
-				Icons by <a href="http://www.doublejdesign.co.uk/">Double-J Design.</a> 
+				
 			</p>
 		</div>
 	</footer>

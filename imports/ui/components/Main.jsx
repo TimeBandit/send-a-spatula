@@ -10,7 +10,6 @@ const Main = ({}) => {
     return (
         <span>
         	<section id="buy" className="buy">
-				<Home />
 				<div className="row">
 	                <div className="column" style={{textAlign: "center"}}>
 	                    <img className="spatula animated tada u-max-full-width" 
