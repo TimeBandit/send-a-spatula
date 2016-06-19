@@ -144,21 +144,21 @@ footer {
     color: grey;
 }
 
-.social, .shares, .info {
+.social{
     display: flex;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
 
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
     
-    /*flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;*/
+    -ms-flex-wrap: wrap;
     
     justify-content: space-between;
     -webkit-justify-content: space-between;
@@ -191,6 +191,10 @@ p.extras {
 
 .sweet-alert > p:nth-child(7) {
     line-height: 0.5;
+}
+
+.fb-like, .tw-like {
+    margin-top: 3px
 }
 /* ------------------------------------------
   NAVIGATION STYLES
