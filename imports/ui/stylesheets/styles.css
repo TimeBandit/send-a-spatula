@@ -175,13 +175,17 @@ p.extras {
 
 .credits, .disclaimer {
     height: 22px;
-    background-color: rgba(30, 174, 219, 0.5);
+    background-color: rgb(30, 174, 219);
     border-radius: 5px;
     color: white;
     /*font-weight: bold;*/
     padding: 3px;
     margin-top: 3px;
     cursor: pointer;
+}
+
+.tw-like {
+    margin-top: 3px;
 }
 
 .discStyle {
@@ -193,13 +197,10 @@ p.extras {
     line-height: 0.5;
 }
 
-.fb-like, .tw-like {
-    margin-top: 3px;
-}
+/*.social {
+    border: 1px solid black;
+}*/
 
-.twitter, .facebook {
-    margin-top: 2px;
-}
 /* ------------------------------------------
   NAVIGATION STYLES
   (+ responsive-nav.css file is loaded in the <head>)

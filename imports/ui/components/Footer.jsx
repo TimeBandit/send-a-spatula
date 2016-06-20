@@ -6,16 +6,11 @@ const Footer = ({}) => (
     <footer>
 		<div className="row">
 			<div className="column social">
-				<div className="facebook">
-					<a href="https://www.facebook.com/sendaspatula" target="_blank">
-						<i className="fa fa-2x fa-facebook-square" aria-hidden="true"></i>
-					</a>
-				</div>
-				<div className="twitter">
-					<a href="https://twitter.com/sendaspatula" target="_blank">
-						<i className="fa fa-2x fa-twitter-square" aria-hidden="true"></i>
-					</a>
-				</div>
+				<div className="fb-like" 
+				data-href="https://sendaspatula.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+		        <div className="tw-like">
+		        	<a href="https://twitter.com/share" className="twitter-share-button">Tweet</a>
+		        </div>
 				<div className="email">
 					<a href="mailto:admin@sendaspatula.com?subject=Send a Spatula" target="_blank">
 						<i className="fa fa-2x fa-envelope" aria-hidden="true"></i>
@@ -23,15 +18,6 @@ const Footer = ({}) => (
 				</div>					
 				<Credits />
 				<Disclaimer />
-				<div className="fb-like" 
-			        data-href="http://www.your-domain.com/your-page.html" 
-					data-layout="standard" 
-					data-action="like" 
-					data-show-faces="true">
-				</div>
-		        <div className="tw-like">
-		        	<a href="https://twitter.com/share" className="twitter-share-button">Tweet</a>
-		        </div>
 			</div>
 		</div>
 		<br/>
