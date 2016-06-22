@@ -91,6 +91,8 @@ footer {
 
 .button-primary {
     box-shadow: 0 0 10px #777777;
+    background-color: #E7415D;
+    border-color: #E7415D;
 }
 
 @media (min-width: 400px) {
