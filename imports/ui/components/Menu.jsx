@@ -26,7 +26,7 @@ export default class Menu extends React.Component {
 						<a href={Meteor.absoluteUrl('#contact-us')}>Contact Us</a>
 					</li>
 					<li>
-						<a href={Meteor.absoluteUrl('#buy')}>BUY -> <span className="cost">£5</span></a>
+						<a href={Meteor.absoluteUrl('#buy')}>BUY</a>
 					</li>
 				</ul>
 			</nav>

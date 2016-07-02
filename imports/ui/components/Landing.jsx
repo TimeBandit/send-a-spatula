@@ -6,7 +6,7 @@ const WelcomeComponent = ({ name }) => (
 			Send a Spatula
 		</h1>
         <h3 className="subTitle animated fadeIn">
-        	100% Fun, 100% Anonymous, Posted to anywhere in the UK <a href="https://en.wikipedia.org/wiki/United_Kingdom" target="_blank"><img src="images/United-Kingdom-flat-icon.png" alt="The flag of the United Kingdom" /></a>
+        	100% Fun, 100% Anonymous, Posted to anywhere in the UK <a href="https://en.wikipedia.org/wiki/United_Kingdom" target="_blank"><img src="images/United-Kingdom-flat-icon.png" alt="The flag of the United Kingdom" /></a> Only £5.
         </h3>
 	</span>
 );

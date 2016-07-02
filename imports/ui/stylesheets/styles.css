@@ -90,9 +90,10 @@ footer {
 }
 
 .button-primary {
+    font-weight: bold;
     box-shadow: 0 0 10px #777777;
-    background-color: #E7415D;
-    border-color: #E7415D;
+    background-color: #E7415D !important;
+    border-color: #E7415D !important;
 }
 
 @media (min-width: 400px) {
@@ -130,6 +131,7 @@ textarea {
     height: 100px;
     resize: none;
     animation-delay: 0.1s;
+    border-color: #E7415D;
 }
 
 
@@ -197,6 +199,10 @@ p.extras {
 
 .sweet-alert > p:nth-child(7) {
     line-height: 0.5;
+}
+
+.fa-arrow-circle-up {
+    color: #E28C29 !important;
 }
 
 /*.social {
