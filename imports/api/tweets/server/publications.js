@@ -1,6 +1,21 @@
+/*jshint esversion: 6 */
+
 import { Meteor } from 'meteor/meteor';
-import { twitterAPIInstance, twitterAPIArgs, sayHello } from './twitter.js'
+import { twitterAPIInstance, twitterAPIArgs, sayHello } from './twitter.js';
 import { _ } from 'meteor/underscore';
+
+const defined = function(obj, strNames) {
+    let arrNames = strNames.split('.');
+    let name = arrNames.shift();
+
+    while (name) {
+        if (!obj.hasOwnProperty(name)) return false;
+        obj = obj[name];
+        name = arrNames.shift();
+    }
+
+    return true;
+};
 
 // initial set up data will be sent in the fixtures file
 Meteor.publish('tweets.Photos', function(num) {
@@ -10,15 +25,15 @@ Meteor.publish('tweets.Photos', function(num) {
 
     const publishedKeys = {};
     console.log(publishedKeys);
-    
-    res = twitterAPIInstance.get('statuses/user_timeline', args,
+
+    res = twitterAPIInstance.get('search/tweets', { q: "#photography", count: 50, result_type: "recent" },
         function(err, tweets, response) {
             console.log('Fetching photos from Twitter');
 
-            _.each(tweets, function(value, key, list) {
+            _.each(tweets.statuses, function(value, key, list) {
                 console.log(`Processing tweet id: ${value.id}`);
-
-                if (value.entities.media != undefined) {
+                // value.entities.media !== undefined
+                if (defined(value,"entities.media")) {
 
                     /* ensure old tweets not republished */
                     if (!publishedKeys[value.id]) {
@@ -33,7 +48,7 @@ Meteor.publish('tweets.Photos', function(num) {
                         publishedKeys[value.id] = true;
                         self.added('TweetData', value.id.toString(), newDoc);
                     }
-                };
+                }
 
             });
 
@@ -41,3 +56,6 @@ Meteor.publish('tweets.Photos', function(num) {
 
         });
 });
+
+// 'statuses/user_timeline', args
+// 'search/tweets', { q: "#sendaspatula", count: 50, result_type: "recent"}

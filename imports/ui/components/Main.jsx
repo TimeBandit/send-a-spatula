@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 import React from 'react';
 
 // componenets
@@ -31,7 +32,7 @@ const Main = ({}) => {
 			</section>
 			<section id="tweets" className="tweets">
 				<Home />
-				<h5>Tweet your spatulas to <a href="https://twitter.com/sendaspatula" target="_blank">@sendaspatula</a></h5>
+				<h5>Tweet your spatula with <a href="https://twitter.com/sendaspatula" target="_blank">#sendaspatula</a></h5>
 				<TweetsContainer />
 			</section>
 			<section id="contact-us" className="contact-us">
