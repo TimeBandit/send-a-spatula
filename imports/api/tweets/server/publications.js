@@ -26,7 +26,7 @@ Meteor.publish('tweets.Photos', function(num) {
     const publishedKeys = {};
     console.log(publishedKeys);
 
-    res = twitterAPIInstance.get('search/tweets', { q: "#photography", count: 50, result_type: "recent" },
+    res = twitterAPIInstance.get('search/tweets', { q: "#sendaspatula", count: 50, result_type: "recent" },
         function(err, tweets, response) {
             console.log('Fetching photos from Twitter');
 
