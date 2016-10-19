@@ -26,14 +26,17 @@ Meteor.publish('tweets.Photos', function(num) {
     const publishedKeys = {};
     console.log(publishedKeys);
 
-    res = twitterAPIInstance.get('search/tweets', { q: "#sendaspatula", count: 50, result_type: "recent" },
+    res = twitterAPIInstance.get('search/tweets', { q: "#sendaspatula", count: 5, result_type: "recent" },
         function(err, tweets, response) {
-            console.log('Fetching photos from Twitter');
+            console.log(tweets.statuses.length);
+            console.log('Fetching photos from Twitter', tweets.statuses[1]);
 
-            _.each(tweets.statuses, function(value, key, list) {
-                console.log(`Processing tweet id: ${value.id}`);
+            _.each(tweets.statuses, function(value, idx, list) {
+                console.log(`Processing tweet number ${idx} with id: ${value.id}`);
                 // value.entities.media !== undefined
                 if (defined(value,"entities.media")) {
+                    console.log(`Tweet number ${idx} has media`);
+                    console.log(value.entities.media[0].media_url);
 
                     /* ensure old tweets not republished */
                     if (!publishedKeys[value.id]) {

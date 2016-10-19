@@ -7,7 +7,7 @@ import metadataSchema from './metadataSchema';
 export const createCharge = new ValidatedMethod({
     name: 'stripe.methods.createCharge',
     validate: new SimpleSchema({
-        amount: { type: Number, allowedValues: [500] },
+        amount: { type: Number, allowedValues: [300] },
         currency: { type: String, allowedValues: ["GBP"] },
         source: { type: String },
         metadata: { type: metadataSchema }

@@ -32,7 +32,7 @@ const Pay = ({ message, setMessage, setPaymentProcessing, shake }) => {
                     // }, 10000);
 
                     createCharge.call({
-                        amount: 500,
+                        amount: 300,
                         currency: 'GBP',
                         source: stripeToken,
                         metadata: metadata,
