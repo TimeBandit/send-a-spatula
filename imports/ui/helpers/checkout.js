@@ -4,7 +4,7 @@ const checkout = StripeCheckout.configure({
     image: 'images/spatula-256px-500pxcv.png',
     name: 'Send a Spatula',
     description: 'Enter the recipents adress to send',
-    amount: 500,
+    amount: 300,
     locale: 'auto',
     currency: 'GBP',
     panelLabel: 'Pay Now',
